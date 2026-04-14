@@ -388,7 +388,8 @@ a:hover { color: var(--rust-light); }
   color: var(--cream);
   transform: rotateY(180deg);
   gap: 16px;
-  justify-content: center;
+  justify-content: flex-start;
+  overflow-y: auto;
 }
 
 .roast-icon { font-size: 2.8rem; line-height: 1; }
@@ -703,6 +704,133 @@ a:hover { color: var(--rust-light); }
   border: 1px solid var(--cream-deeper);
   border-radius: 20px;
   color: var(--brown);
+}
+
+/* ── MY LITTLE CAFE ──────────────────────────────────────── */
+.section-cafe {
+  background: var(--white);
+}
+
+/* Syrup cards */
+.cafe-syrups {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 48px 0;
+}
+
+.syrup-card {
+  background: var(--cream);
+  border: 1px solid var(--cream-deeper);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.syrup-icon {
+  font-size: 2rem;
+}
+
+.syrup-name {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--espresso);
+}
+
+.syrup-desc {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  color: var(--brown);
+}
+
+/* Photo gallery */
+.cafe-gallery {
+  margin: 0 0 48px;
+}
+
+.cafe-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 260px 260px;
+  gap: 12px;
+}
+
+.cafe-photo {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--cream-dark);
+}
+
+.cafe-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.cafe-photo:hover img {
+  transform: scale(1.03);
+}
+
+.cafe-photo--tall {
+  grid-row: span 2;
+}
+
+.cafe-photo--wide {
+  grid-column: span 2;
+}
+
+/* Menu note */
+.cafe-menu-note {
+  background: var(--espresso);
+  border-radius: var(--radius-lg);
+  padding: 40px 48px;
+  color: var(--cream);
+}
+
+.menu-note-inner {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.menu-heading {
+  font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--cream);
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(245,240,232,0.2);
+}
+
+.menu-col ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.menu-col ul li {
+  font-size: 0.88rem;
+  color: rgba(245,240,232,0.8);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .cafe-syrups { grid-template-columns: 1fr; }
+  .cafe-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+  .cafe-photo--tall { grid-row: span 1; }
+  .cafe-photo--wide { grid-column: span 2; }
+  .menu-note-inner { grid-template-columns: 1fr; gap: 24px; }
+  .cafe-menu-note { padding: 28px 24px; }
 }
 
 /* ── LATTE ART ───────────────────────────────────────────── */
